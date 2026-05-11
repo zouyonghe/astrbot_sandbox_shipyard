@@ -2,20 +2,20 @@
 
 英文版说明：[`README.md`](./README.md)
 
-`astrbot_sandbox_shipyard` 是一个基于 AstrBot 通用 sandbox provider 机制实现的插件，用来提供 `shipyard` 运行时。
+`astrbot_sandbox_shipyard` 是 AstrBot 的 Shipyard 沙盒驱动插件。
 
-它适合需要经典远程沙箱能力的场景，支持 shell、Python 和文件系统操作。
+它适合已有 Shipyard 服务的部署，支持 Shell、Python 和文件操作。
 
 ## 功能特性
 
-- 为 AstrBot 提供 `shipyard` 沙箱运行时。
-- 支持 shell、Python、文件系统能力。
-- 沙箱启动时会同步本地 AstrBot skills。
+- 提供 `shipyard` 沙盒驱动。
+- 支持 Shell、Python 和文件操作。
+- 沙盒启动时会同步本地 AstrBot Skills。
 - 支持配置会话 TTL 和最大会话数量。
 
 ## 依赖要求
 
-- 需要使用已经支持外部 sandbox provider 插件的 AstrBot 版本。
+- 需要使用支持外部沙盒驱动插件的 AstrBot 版本。
 - 依赖 `requirements.txt` 中的 `shipyard-python-sdk`。
 - 需要可访问的 Shipyard 服务地址。
 - 需要有效的 Shipyard Access Token。
@@ -32,7 +32,7 @@ git clone https://github.com/zouyonghe/astrbot_sandbox_shipyard.git data/plugins
 
 ## 配置方法
 
-先在 AstrBot 核心配置中启用 sandbox，并把运行时设置为 `shipyard`：
+先在 AstrBot 核心配置中启用沙盒模式，并把沙盒驱动设置为 `shipyard`：
 
 ```json
 {
@@ -58,7 +58,7 @@ git clone https://github.com/zouyonghe/astrbot_sandbox_shipyard.git data/plugins
 
 - 该插件适合远程执行命令、运行 Python、读写文件等场景。
 - 它不会注册浏览器自动化工具，也不会提供 GUI 工具。
-- 插件启用后，把 `provider_settings.sandbox.booter` 设置为 `shipyard`，AstrBot 就会把 sandbox 请求路由到这个运行时。
+- 插件启用后，把 `provider_settings.sandbox.booter` 设置为 `shipyard`，AstrBot 就会把沙盒请求交给它处理。
 
 ## 限制说明
 
